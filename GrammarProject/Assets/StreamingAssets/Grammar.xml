@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar version="1.0" xml:lang="en-US" mode="voice"
+         root="toplevel" tag-format="semantics/1.0"
+         xmlns="http://www.w3.org/2001/06/grammar" >
+
+  <rule id="toplevel" scope="public">
+    <one-of>
+      <item>
+        <ruleref uri="#gamestate" />
+      </item>
+      <item>
+        <ruleref uri="#playerstate" />
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="gamestate">
+    <one-of>
+      
+      <item>
+        <tag>out.action = "pause";</tag>
+        <one-of>
+          <item> Pause the game </item>
+          <item> Pause game </item>
+          <item> Pause </item>
+        </one-of>
+      </item>
+      
+      <item>
+        <tag>out.action = "resume";</tag>
+        <one-of>
+          <item> Resume </item>
+          <item> Resume the game </item>
+          <item> go </item>
+          <item> start </item>
+          <item> start game </item>
+          <item> continue </item>
+          <item> continue game </item>
+        </one-of>
+      </item>
+      
+    </one-of>
+  </rule>
+
+  <rule id="playerstate">
+    <one-of>
+      
+      <item>
+        <tag>out.action="moveL"; </tag>
+        <one-of> 
+          <item> go left </item>
+          <item> move left </item>
+          <item> travel left </item>
+          <item> left </item>
+        </one-of>
+      </item>
+      
+      <item>
+        <tag>out.action="moveR"; </tag>
+        <one-of>
+          <item> go right </item>
+          <item> move right </item>
+          <item> travel right </item>
+          <item> right </item>
+        </one-of>
+    </item>
+
+    <item>
+      <tag>out.action="stop"; </tag>
+      <one-of>
+        <item> stop </item>
+        <item> stop moving </item>
+        <item> stop now </item>
+        <item> wait </item>
+        <item> stop there </item>
+      </one-of>
+    </item>
+
+    <item>
+      <tag>out.action="fire"; </tag>
+      <one-of>
+        <item> shoot </item>
+        <item> fire </item>
+        <item> shoot now </item>
+        <item> fire now </item>
+        <item> shoot gun </item>
+        <item> fire gun </item>
+      </one-of>
+    </item>
+      
+    </one-of>
+  </rule>
+</grammar>

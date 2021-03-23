@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBullet : MonoBehaviour
 {
-
 	private Transform bullet;
 	public float speed = 0.05f;
+	public bool isHit = false;
 
 	// Use this for initialization
 	void Start()
@@ -28,7 +29,7 @@ public class EnemyBullet : MonoBehaviour
 		{
 			Destroy(other.gameObject);
 			Destroy(gameObject);
-			GameOver.isPlayerDead = true;
+			isHit = true;
 		}
 		else if (other.tag == "Base")
 		{

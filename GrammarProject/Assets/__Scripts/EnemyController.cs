@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
 	public GameObject shot;
 	public Text winText;
 	public float fireRate = 0.998f;
+	public Text gameOver;
 
 	// Use this for initialization
 	void Start()
@@ -42,7 +43,7 @@ public class EnemyController : MonoBehaviour
 
 			if (enemy.position.y <= -4)
 			{
-				GameOver.isPlayerDead = true;
+				gameOver.enabled = true;
 				Time.timeScale = 0;
 			}
 		}
